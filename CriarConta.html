@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficon</title>
+    <link rel="shortcut icon" type="imagex/png" href="./imagens/BULFRA-PNG.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .logo {
+            margin-left: 90px;
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: system-ui, -apple-system, Arial, Helvetica, sans-serif;
+            background: #363636;
+            height: 20vh;
+            margin-bottom: 1px;
+        }
+
+        main {
+            background-size: cover;
+            height: 80vh;
+            background: #363636;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        entrar {
+            display: flex;
+            width: 50vh;
+            height: 70vh;
+            background: #524747;
+            border-radius: 20px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+
+        info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        senha {
+            padding-top: 40px;
+        }
+
+        mostrar {
+            display: flex;
+            flex-direction: row;
+            padding-top: 40px;
+        }
+
+        .mosenha {
+            padding-left: 6px;
+        }
+
+        .botao1 {
+            display: inline-block;
+            padding: .75rem 1.25rem;
+            border-radius: 10rem;
+            color: black;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: .15rem;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .entrada {
+            width: 300px;
+            height: 20px;
+            border-radius: 5px;
+            margin: 7px;
+            border-color: white;
+            padding: 2px 2px 2px 2px;
+        }
+
+        .caixa-1 {
+            cursor: pointer;
+        }
+
+        espaco {
+            width: 120vh;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-list li {
+            letter-spacing: 3px;
+            opacity: 0;
+        }
+
+        .mobile-menu {
+            cursor: pointer;
+        }
+
+        .mobile-menu div {
+            width: 32px;
+            height: 2px;
+            background: white;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 8000px) {
+
+            body {
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+
+            .nav-list {
+                position: absolute;
+                top: 20vh;
+                right: 0;
+                width: 25vw;
+                height: 80vh;
+                background: #4F4F4F;
+                margin: 1px;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in;
+            }
+
+            .nav-list.active {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes navLinkFade {
+                from {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            .mobile-menu.active .linha1 {
+                transform: rotate(-45deg) translate(-8px, 8px);
+            }
+
+            .mobile-menu.active .linha2 {
+                opacity: 0;
+            }
+
+            .mobile-menu.active .linha3 {
+                transform: rotate(45deg) translate(-5px, -7px);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="./Inicio.html"><img src="./FICON_LETTERING-removebg-preview.png" width="300px" height="auto"></a></div>
+            <espaco></espaco>
+            <div class="mobile-menu">
+                <div class="linha1"></div>
+                <div class="linha2"></div>
+                <div class="linha3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="./Inicio.html">Inicio</a></li>
+                <li><a href="./CriarConta.html">Criar Conta</a></li>
+                <li><a href="./Entrar.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <entrar>
+            <h1>Criar Conta</h1>
+            <info>
+                <form method="POST" action="cadastrar.php">
+                    <label>Email:</label><br><input type="text" id="email" class="entrada" name="email"><br></email>
+                    <label>Senha:</label></label> <br><input type="password" id="senha" class="entrada" name="senha"><br></senha>
+                    <mostrar><input type="checkbox" id="mostrar-senha" class="caixa-1" onclick="MostrarSenha()"><div class="mosenha" id="mosenha-1">Mostrar</div><div class="mosenha">senha</div></mostrar>
+                </form>
+            </info>
+            <form method="post" action="cadastrar.php"><input type="button" value="Entrar" class="botao1" id="cadastrar" name="cadastrar"></form>
+        </entrar>
+    </main>
+    <script>
+        class MobileNavbar {
+            constructor(mobileMenu, navList, navLinks) {
+                this.mobileMenu = document.querySelector(mobileMenu);
+                this.navList = document.querySelector(navList);
+                this.navLinks = document.querySelectorAll(navLinks);
+                this.activeClass = "active";
+
+                this.handleClick = this.handleClick.bind(this);
+            }
+
+            animateLinks() {
+                this.navLinks.forEach((link) => {
+                    link.style.animation
+                        ? (link.style.animation = "")
+                        : (link.style.animation = 'navLinkFade 0.5s ease forwards 0.3s');
+                });
+            }
+
+            handleClick() {
+                this.navList.classList.toggle(this.activeClass);
+                this.mobileMenu.classList.toggle(this.activeClass);
+                this.animateLinks();
+            }
+
+            addClickEvent() {
+                this.mobileMenu.addEventListener("click", this.handleClick);
+            }
+
+            init() {
+                if (this.mobileMenu) {
+                    this.addClickEvent();
+                }
+                return this;
+            }
+        }
+
+        const mobileNavbar = new MobileNavbar(
+            ".mobile-menu",
+            ".nav-list",
+            ".nav-list li"
+        );
+
+        mobileNavbar.init();
+
+        function MostrarSenha() {
+            var senha = document.getElementById("senha");
+            var mosenha = document.getElementById("mosenha-1");
+            if (senha.type == "password") {
+                senha.type = "text";
+            }
+            else {
+                senha.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficon</title>
+    <link rel="shortcut icon" type="imagex/png" href="./imagens/BULFRA-PNG.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            transition-timing-function: ease-in-out;
+        }
+
+        body {
+            background-color: #5E5856;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 160vh;
+            overflow-x: hidden;
+            padding-bottom: 25vh;
+        }
+
+        .bufra1 {
+            position: relative;
+            left: 22%;
+            bottom: 10%;
+        }
+
+        .parte1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 20vh;
+            font-size: 30px;
+        }
+
+        .parte2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 20vh;
+            font-size: 30px;
+        }
+
+        .criar_conta {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            top: 10%;
+            padding-bottom: 5%;
+        }
+
+        .comecar {
+            height: 50px;
+            width: 150px;
+            background-color: #E7191F;
+            border: 0;
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            bottom: 5%;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .logo1 {
+            position: relative;
+            bottom: 5%;
+        }
+
+        .bem_vindo {
+            position: relative;
+            top: 40%;
+            left: 3%;
+        }
+
+        .texto1 {
+            position: relative;
+            font-size: 25px;
+            right: 24.5%;
+            bottom: 60%;
+        }
+
+        .bufra2 {
+            transform: rotate(-10deg);
+            position: relative;
+            right: 10%;
+            bottom: 50%;
+        }
+
+        caixa1 {
+            width: 390px;
+            height: 390px;
+            background-color: #CFD0D2;
+            border-radius: 35px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: space-around;
+            align-items: flex-start;
+            font-size: 20px;
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        .entrada {
+            border: 0;
+            border-radius: 15px;
+            padding-left: 3px;
+            padding-right: 3px;
+            width: 200px;
+            height: 30px;
+            position: relative;
+            left: 20%;
+        }
+
+        .entrada2 {
+            position: relative;
+            left: 5%;
+        }
+
+        .texto2 {
+            position: relative;
+            left: 3%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #E7191F;
+        }
+
+        .cadastrar {
+            width: 200px;
+            height: 30px;
+            background-color: white;
+            border: 0;
+            border-radius: 10px;
+            position: relative;
+            left: 23%;
+            cursor: pointer;
+        }
+
+        .texto3 {
+            position: relative;
+            left: 22%;
+        }
+
+        usuario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input .nome {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nome {
+            background-color: #5E5856;
+            color: white;
+            font-size: 30px;
+            border-radius: 20px;
+            border: 0;
+            position: relative;
+            bottom: 2px;
+            width: 150px;
+            height: 35px;
+            position: relative;
+            text-align: center;
+        }
+
+        circulo1 {
+            display: flex;
+            width: 330px;
+            height: 330px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: #E7191F solid 20px;
+            border-radius: 50%;
+        }
+
+        .usuario {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .mostar_senha1 {
+            position: relative;
+            left: 24%;
+            top: 20%;
+            background-color: #CFD0D2;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .cadastrar2 {
+            width: 200px;
+            height: 30px;
+            background-color: white;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="parte1">
+        <div class="bem_vindo">Seja bem-vindo ao</div>
+        <img src="./imagens/Bufra_inclinado(1).png" width="450px" class="bufra1">
+    </div>
+    <img src="./imagens/FICON_LOGO_3.png" width="500px" height="auto" class="logo1">
+    <div class="parte2">
+        <img src="./imagens/BULFRA PNG.png" width="470px" class="bufra2">
+        <div class="texto1">Faça compras inteligentes, aprenda a manusear o <br> seu dinheiro e evite o consumismo desenfreado.</div>
+    </div>
+    <button class="comecar" onclick="cadastro()" id="botao">Começar</button>
+
+    <div class="criar_conta" id="lugar">
+        <usuario>
+            <circulo1><img src="./imagens/cabeça_bulfra-removebg-preview.png" width="300px" height="auto"></circulo1><br>
+            <div class="usuario">
+                <b><input type="text" id="nome" class="nome" value="Bulfra"></b> 
+                <img src="./imagens/Sara (2).png" height="20px">
+            </div>
+        </usuario>
+        <caixa1>
+            <h1 class="texto2">Criar Conta</h1>
+            <hr color="black">
+            <div class="entrada2">E-mail:<input type="text" id="email" class="entrada" name="email"></div>
+            <div class="entrada2">
+                Senha: <input type="password" id="Senha" class="entrada" name="senha">
+                <button  class="mostar_senha1" onclick="mostar_senha()"><img src="./imagens/Olho_branco (3).png" width="20px" height="auto" id="img1"></button>
+            </div>
+            <a href="./Inicio.html" class="cadastrar"><button class="cadastrar2" onmouseenter="mudar_cor1()" id="cadastrar" onmouseleave="voltar_cor1()">Cadastrar</button></a>
+            <div class="texto3">Possui uma conta? <a href="./Inicio.html">Entrar</a></div>
+        </caixa1>
+    </div>
+
+    <script>
+        var nome = document.getElementById("nome").innerHTML = nome;
+
+        function mudar_cor1() {
+            var cadastrar = document.getElementById("cadastrar").style.backgroundColor = "rgb(236, 235, 235)";
+        }
+
+        function voltar_cor1() {
+            var cadastrar = document.getElementById("cadastrar").style.backgroundColor = "white";
+        }
+
+        function mostar_senha() {
+            var imagem = document.getElementById("img1");
+            var senha = document.getElementById("Senha");
+            if (senha.type == "password") {
+                imagem.src = "./imagens/Olho_branco-removebg-preview.png" ;
+                senha.type = "text";
+            }else{
+                imagem.src = "./imagens/Olho_branco (3).png" ;
+                senha.type = "password";
+            }
+        }
+
+        document.getElementById('botao').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('lugar').scrollIntoView({ behavior: 'smooth' });
+        });
+
+    </script>
+</body>
+</html>
